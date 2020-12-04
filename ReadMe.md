@@ -64,7 +64,9 @@ There are over 2000 genres and subgenres on Spotify. These are just some example
 
 The main dataset will condense these into 7 music genres: ***Pop, Rock, Country, Blues, Reggae, Jazz and Hip hop.***
 
-This dataset describes sonic characteristics of a song, such as how lively it is, it's tempo, if it has many instruments or few, a lot of speech or not, etc. Take "energy" for example:
+Before we look into how genres differ in terms of content, here is an example on how they differ in terms of sound:
+
+There are many acoustic datasets that describes sonic characteristics of a song, such as "liveliness", "tempo", "instrumentalness", "speechiness", etc. Take "energy" for example:
 
 > Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy.
 
@@ -72,7 +74,7 @@ This dataset describes sonic characteristics of a song, such as how lively it is
 
 
 
-To understand the data a bit more, the dataset was divided into songs per genre. What exactly is being compared here? In order to get insight on how much data there is, two plots were generated. One showcasing number of songs per genre and the other number of total words per genre in each genre.
+Now moving on to understanding the content of the lyrics, the dataset was divided into songs per genre. What exactly is being compared here? In order to get insight on how much data there is, two plots were generated. One showcasing number of songs per genre and the other number of total words in each genre.
 
 ![song](images/songspergen.png)
 
@@ -87,7 +89,7 @@ The first step into finding differences or similarities in the words used in eac
 
 To do this, a Term Frequency/Inverse Data Frequency approach was used. This featurization method will give different weights to genres (the classes) in which a certain word occurs more often.
 
-> Featurizing the data is to translate our categorical data into a language the computer can understand
+> Featurizing the data is to translate our categorical data into a language the computer can understand.
 
 After a few iterations of removing common words to all classes, I reached a final version of the top 20 words in each genre.
 
@@ -102,11 +104,11 @@ index | genre   | top_20_words|
 6 | blues   | {'tell, good, look, blue, home, hear, mind, think, break, world, need, hand, little, woman, fall, head, stand, change, lose, turn'}       |"
 
 
-For further analysis, I picked two intuitively different genres to delve into. Here is a comparison of the top 200 words in Blues and Country:
+For further analysis, I picked two intuitively different genres. Here is a comparison of the top 200 words in Blues and Country:
 
 ![top200](images/word_cloud.png)
 
-What if a certain type of word tells us a better story? I used the SpaCy Library to sort only nouns within the top 200 words. The goal is to dig for further differences between genres by removing verbs that generally are used to describe similar actions. Here are the findings:
+What if a certain type of word tells us a better story? I used the SpaCy Library to sort only nouns within the top 200 words. The goal is to dig for further differences between genres by removing verbs. Here are the findings:
 
 
 ![top200noun](images/noun_cloud.png)
