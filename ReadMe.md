@@ -9,7 +9,7 @@
 
 Music is a medium like no other. The same way it can transmit emotions and moods through sound, it can also transmit messages through words. Music has this amazing ability to connect a message to an emotion. Artists and genres accomplish this in their own unique ways: some use heartbreaking lyrics with exciting and uplifting sounds, social criticism with slow and mellow music...the possibilities are endless.
 
-This project aims to understand how genres focus on lyric choices in their songs. It also sets out to create an algorithm that can predict a song's genre based on it's lyrics. 
+This project aims to understand how genres focus on lyric choices in their songs. It also sets out to create an algorithm that can predict a song's genre based on the lyrics. 
 
 ## Data
 
@@ -22,7 +22,7 @@ The main dataset used for this project is titled "Music Dataset: Lyrics and Meta
 
 Another more detailed dataset was also used. [This dataset](https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks?select=data_by_artist.csv) was put together using Spotify's API and it has more detailed information on artist's genre and acoustic data. I used this dataset for later comparison of genre predictions to account for possible subgenres.
 
-These are all the subgenres the Backstreet Boys have asigned in this dataset:
+For example, these are all the subgenres the Backstreet Boys have asigned in this dataset:
 
 |genres | artists |
 |-----:|:----------|
@@ -32,7 +32,7 @@ These are all the subgenres the Backstreet Boys have asigned in this dataset:
 
 ## The Use of Words in Music
 
-What makes genres of music different? Rhythm, effects, melody, intrument choice, playing techniques; all of those things can help us distinguish one music genre from another. Can we say the same about lyrics? Do the messages from artist in different genres differ enough for an algorithm to be able to predict to which genre a song belongs to based on it's lyircs? 
+What makes genres of music different? Rhythm, effects, melody, intrument choice, playing techniques; all of those things can help us distinguish one music genre from another. Can we say the same about lyrics? Does the messages from artist of different genres differ enough for an algorithm to predict to which genre a song belongs to based on it's lyircs? 
 
 ![beatleslyrics](images/i-wanna-hold-your-hand-promo.png)
 [cbsnews.com](https://www.cbsnews.com/pictures/the-beatles-original-lyrics/16/)
@@ -106,13 +106,13 @@ For further analysis, I picked two intuitively different genres to delve into. H
 
 ![top200](images/word_cloud.png)
 
-What if a certain type of word tells us a better story? I the SpaCy Library to sort only nouns within the top 200 words. The goal is to dig for further differences between genres by removing verbs that generally are used to describe similar actions. Here are the findings:
+What if a certain type of word tells us a better story? I used the SpaCy Library to sort only nouns within the top 200 words. The goal is to dig for further differences between genres by removing verbs that generally are used to describe similar actions. Here are the findings:
 
 
 ![top200noun](images/noun_cloud.png)
 
 
- It is hard to say that these genres are different enough in terms of lyrics, but can a model perform well in predicting the song's genre based on the lyrics alone?
+ It is hard to say that these genres are different just by visually looking at the lyrics, but can a model perform well in predicting the song's genre based on the lyrics alone?
 
 ## Putting the Computer to Work: Creating Predictions
 
@@ -155,7 +155,7 @@ In natural language, how well did our model predicted the genre of Backstreet Bo
 
 Considering the class imbalances in the data and the fact that we are not accounting for important subgenres, the model did a better job in predicting a song's genre based on it's lyrics than random chance. The average prediction score (f1 score) of 37% is higher than the prediction probability of picking one of the seven genres at random, which is approximately 14%. 
 
-There is still room to improve this model, but it is safe to say that it is possible to make an accurate prediction of a song's genre based solely on it's lyrics.
+There is still room to improve this model, but it is safe to say that this model improves on random chance predictions of a song's genre based solely on it's lyrics.
 
 
 
