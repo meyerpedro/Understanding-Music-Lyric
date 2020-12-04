@@ -1,4 +1,4 @@
-# Understanding Music Lyrics by Genre
+# Understanding Music Lyrics
 
 #### _Capstone Project II_ by Pedro Meyer
 
